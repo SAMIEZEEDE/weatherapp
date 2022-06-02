@@ -15,12 +15,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-LogComponent
+import { LogComponent } from '../components/Log.component';
 //CORE_REFERENCE_IMPORT-wheathersearchComponent
 import { wheathersearchComponent } from '../components/wheathersearch.component';
 //CORE_REFERENCE_IMPORT-weathercardComponent
 import { weathercardComponent } from '../components/weathercard.component';
-//CORE_REFERENCE_IMPORT-log_pageComponent
-import { log_pageComponent } from '../components/log_page.component';
 
 /**
  * Reads datasource object and injects the datasource object into window object
@@ -53,12 +53,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-LogComponent
+  LogComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-wheathersearchComponent
   wheathersearchComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-weathercardComponent
   weathercardComponent,
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-log_pageComponent
-  log_pageComponent,
 ];
 
 /**
@@ -84,7 +84,7 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

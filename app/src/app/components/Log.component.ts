@@ -15,13 +15,13 @@ import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.ser
 //append_imports_end
 
 @Component({
-  selector: 'bh-log_page',
-  templateUrl: './log_page.template.html',
+  selector: 'bh-Log',
+  templateUrl: './Log.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class log_pageComponent {
+export class LogComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -60,7 +60,7 @@ export class log_pageComponent {
     }
   }
 
-  //appendnew_flow_log_pageComponent_start
+  //appendnew_flow_LogComponent_start
 
   sd_oRBOvUYqpLwUQUCq(bh) {
     try {
@@ -93,5 +93,5 @@ export class log_pageComponent {
       throw e;
     }
   }
-  //appendnew_flow_log_pageComponent_Catch
+  //appendnew_flow_LogComponent_Catch
 }

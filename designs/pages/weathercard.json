@@ -1,0 +1,96 @@
+[
+    {
+        "id": "sd_ylhXy1SQP9nSGKr9",
+        "type": "tab",
+        "createdDate": "2022-06-02T09:32:49.360Z",
+        "label": "weathercard",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "weathercardComponent"
+    },
+    {
+        "id": "sd_qiWa8OvLmzv0WeKE",
+        "type": "OnInit",
+        "z": "sd_ylhXy1SQP9nSGKr9",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [
+            {
+                "key": "showCard",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "false"
+                }
+            },
+            {
+                "key": "weatherdata",
+                "defaultValue": {
+                    "type": "any",
+                    "value": "{}"
+                }
+            }
+        ],
+        "localVariables": [],
+        "outputVariables": [
+            {
+                "key": "logData",
+                "defaultValue": {
+                    "type": "any",
+                    "value": null
+                }
+            }
+        ],
+        "functionName": "sd_qiWa8OvLmzv0WeKE",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_oH0JG2QUMCq0eUhV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "weathercardComponent"
+    },
+    {
+        "id": "sd_oH0JG2QUMCq0eUhV",
+        "type": "PageVariables",
+        "z": "sd_ylhXy1SQP9nSGKr9",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "localStorage",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "localStorage"
+                }
+            },
+            {
+                "textIp": "showCard",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_oH0JG2QUMCq0eUhV",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

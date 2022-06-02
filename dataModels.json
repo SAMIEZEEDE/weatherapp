@@ -1,0 +1,9 @@
+{
+    "20a2edf7-9566-580d-cc0d-95e78964a543": {
+        "dataModelId": "20a2edf7-9566-580d-cc0d-95e78964a543",
+        "name": "logobject",
+        "description": "captures the log info",
+        "dataSource": "neutrinos-rt",
+        "fields": []
+    }
+}

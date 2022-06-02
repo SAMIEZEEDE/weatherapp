@@ -1,0 +1,362 @@
+[
+    {
+        "id": "sd_y2ctFzNIsDlHGCk0",
+        "type": "tab",
+        "createdDate": "2022-06-02T09:33:22.449Z",
+        "label": "wheathersearch",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_2wUUEZVm5hR17K1Y",
+        "type": "OnInit",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_2wUUEZVm5hR17K1Y",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_WqVqz3Bz99He0DVp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_WqVqz3Bz99He0DVp",
+        "type": "PageVariables",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "logArray",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "[]"
+                }
+            }
+        ],
+        "functionName": "sd_WqVqz3Bz99He0DVp",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_0qXFFCaByfpzYiQ0",
+        "type": "PageStart",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "updateLog",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "logobject",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "updateLog",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_6auK7f2psrqvOeUz",
+        "type": "Script",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.logArray.push(bh.input.logobject);",
+        "functionName": "sd_6auK7f2psrqvOeUz",
+        "category": "Function",
+        "x": 145,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_11sHCJeVof4fcwbs",
+        "type": "PageStart",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "processWeather",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "cityName",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "processWeather",
+        "category": "General",
+        "x": 45,
+        "y": 300,
+        "wires": [
+            [
+                "sd_IcMZGGpyNUlcjp6b"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_IcMZGGpyNUlcjp6b",
+        "type": "Script",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.showCard = (typeof this.page.weatherdata === 'object' && Object.keys(this.page.weatherdata).length > 2);",
+        "functionName": "sd_IcMZGGpyNUlcjp6b",
+        "category": "Function",
+        "x": 145,
+        "y": 300,
+        "wires": [
+            [
+                "sd_kyGmzbzJ37NqYvj8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_kyGmzbzJ37NqYvj8",
+        "type": "PageSwitch",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "showCard",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.showCard",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_kyGmzbzJ37NqYvj8",
+        "category": "Function",
+        "x": 245,
+        "y": 280,
+        "wires": [
+            [
+                "sd_tRfxYOjlN5tFZpjE"
+            ],
+            [
+                "sd_MexB8kqcbgqs4pO1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_MexB8kqcbgqs4pO1",
+        "type": "Script",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "localStorage.lastCity = bh.input.cityName;\nbh.input.successlog = {type: 'info', message: 'Successfully Retrieved the Weather Data for city: ' + bh.input.cityName}",
+        "functionName": "sd_MexB8kqcbgqs4pO1",
+        "category": "Function",
+        "x": 365,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_tRfxYOjlN5tFZpjE",
+        "type": "PageCallService",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "Error log",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_y2ctFzNIsDlHGCk0",
+            "type": "tab",
+            "createdDate": "2022-06-02T09:33:22.449Z",
+            "label": "wheathersearch",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_0qXFFCaByfpzYiQ0",
+            "flowName": "updateLog"
+        },
+        "inputVariables": [
+            {
+                "key": "logobject",
+                "map": true,
+                "valueType": "bh",
+                "value": "bh.input.errorlog"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./wheathersearch",
+        "startName": "updateLog",
+        "inputParams": [
+            "bh.bh.input.errorlog"
+        ],
+        "accept_csd": false,
+        "functionName": "errorLog",
+        "category": "General",
+        "x": 485,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ftNfLwD0s0FEUOS8",
+        "type": "Catch",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "sd_tRfxYOjlN5tFZpjE"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "ignoreList": "",
+        "functionName": "sd_ftNfLwD0s0FEUOS8",
+        "category": "General",
+        "x": 525,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "wheathersearchComponent"
+    },
+    {
+        "id": "sd_FiUHQJI0QEweozgy",
+        "type": "Script",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.errorlog = { type: 'error', message: `Weather Data Not Found${bh.input.cityName ? ` For the City: ${bh.input.cityName}` : ''}!` }",
+        "functionName": "sd_FiUHQJI0QEweozgy",
+        "category": "Function",
+        "x": 605,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    },
+    {
+        "id": "sd_iwKCgbjZJfaOfHAe",
+        "type": "PageCallService",
+        "z": "sd_y2ctFzNIsDlHGCk0",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_y2ctFzNIsDlHGCk0",
+            "type": "tab",
+            "createdDate": "2022-06-02T09:33:22.449Z",
+            "label": "wheathersearch",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_0qXFFCaByfpzYiQ0",
+            "flowName": "updateLog"
+        },
+        "inputVariables": [
+            {
+                "key": "logobject",
+                "map": true,
+                "valueType": "bh",
+                "value": "bh.input.errorlog"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./wheathersearch",
+        "startName": "updateLog",
+        "inputParams": [
+            "bh.bh.input.errorlog"
+        ],
+        "accept_csd": false,
+        "functionName": "sd_iwKCgbjZJfaOfHAe",
+        "category": "General",
+        "x": 145,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true
+    }
+]
